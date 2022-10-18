@@ -1,0 +1,325 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 2px 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+  
+  /* Style tab links */
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    font-size: 17px;
+    width: 33%;
+  }
+  
+  .tablink:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+
+.button {
+    font-weight: bold;
+ }
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('dsa', this, 'red')"id="defaultOpen">DATA STRUCTURE</button>
+<button class="tablink" onclick="openPage('dbms', this, 'green')" >DBMS</button>
+<button class="tablink" onclick="openPage('os', this, 'blue')">OPERATING SYSTEM</button>
+
+
+<div id="dsa" class="tabcontent">
+<button class="accordion">1) What are Data Structures?</button>
+<div class="panel">
+  <p>A data structure is a mechanical or logical way that data is organized within a program. The organization of data is what determines how a program performs. There are many types of data structures, each with its own uses. When designing code, we need to pay particular attention to the way data is structured. If data isn't stored efficiently or correctly structured, then the overall performance of the code will be reduced</p>
+</div>
+
+<button class="accordion" style="font-weight:bold;">2) Describe the types of Data Structures?</button>
+<div class="panel">
+  <p>Linear Data Structure: A data structure that includes data elements arranged sequentially or linearly, where each element is connected to its previous and next nearest elements, is referred to as a linear data structure. Arrays and linked lists are two examples of linear data structures.<br>
+    Non-Linear Data Structure: Non-linear data structures are data structures in which data elements are not arranged linearly or sequentially. We cannot walk through all elements in one pass in a non-linear data structure, as in a linear data structure. Trees and graphs are two examples of non-linear data structures</p>
+</div>
+
+<button class="accordion">What is a linked-list?</button>
+<div class="panel">
+  <p>A linked-list is a list of data-items connected with links i.e. pointers or references. Most modern high-level programming language does not provide the feature of directly accessing memory location, therefore, linked-list are not supported in them or available in form of inbuilt functions.</p>
+</div>
+
+<button class="accordion">What is a queue in data-structure?</button>
+<div class="panel">
+  <p>A queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.</p>
+</div>
+
+<button class="accordion">What is binary search?</button>
+<div class="panel">
+  <p>A binary search works only on sorted lists or arrays. This search selects the middle which splits the entire list into two parts. First the middle is compared.
+
+    This search first compares the target value to the mid of the list. If it is not found, then it takes decision on whether.</p>
+</div>
+
+<button class="accordion">What is bubble sort and how bubble sort works?</button>
+<div class="panel">
+  <p>Bubble sort is comparison based algorithm in which each pair of adjacent elements is compared and elements are swapped if they are not in order. Because the time complexity is Ο(n2), it is not suitable for large set of data.</p>
+</div>
+
+<button class="accordion">How quick sort works?</button>
+<div class="panel">
+  <p>Quick sort uses divide and conquer approach. It divides the list in smaller 'partitions' using 'pivot'. The values which are smaller than the pivot are arranged in the left partition and greater values are arranged in the right partition. Each partition is recursively sorted using quick sort.</p>
+</div>
+
+<button class="accordion">What is merge sort and how it works?</button>
+<div class="panel">
+  <p>Merge sort is sorting algorithm based on divide and conquer programming approach. It keeps on dividing the list into smaller sub-list until all sub-list has only 1 element. And then it merges them in a sorted way until all sub-lists are consumed. It has run-time complexity of Ο(n log n) and it needs Ο(n) auxiliary space.</p>
+</div>
+
+<button class="accordion">What is a graph?</button>
+<div class="panel">
+  <p>A graph data structure is a collection of nodes that have data and are connected to other nodes.</p>
+</div>
+
+<button class="accordion">What is an AVL Tree?</button>
+<div class="panel">
+  <p>AVL trees are height balancing binary search tree. AVL tree checks the height of left and right sub-trees and assures that the difference is not more than 1. This difference is called Balance Factor<br><br>
+    BalanceFactor = height(left-sutree) − height(right-sutree)</p>
+</div>
+
+<button class="accordion">How many spanning trees can a graph has?</button>
+<div class="panel">
+  <p>It depends on how connected the graph is. A complete undirected graph can have maximum nn-1 number of spanning trees, where n is number of nodes.</p>
+</div>
+
+</div>
+
+
+<div id="dbms" class="tabcontent">
+    <button class="accordion">1) What is DBMS ? Mention advantages..</button>
+    <div class="panel">
+      <p>Database Management System (DBMS) is a software for storing and retrieving users’ data while considering appropriate security measures. It consists of a group of programs which manipulate the database. The DBMS accepts the request for data from an application and instructs the operating system to provide the specific data. In large systems, a DBMS helps users and other third-party software to store and retrieve data.</p>
+    </div>
+    
+    <button class="accordion">2) What is RDBMS ? Properties.. </button>
+    <div class="panel">
+      <p>A Relational Database Management system (RDBMS) is a database management system that is based on the relational model. It has the following major components: Table, Record/Tuple/Row, Field, and Column/Attribute. Examples of the most popular RDBMS are MYSQL, Oracle, IBM DB2, and Microsoft SQL Server database.
+        <ul><li>Values are atomic.</li>
+            <li>All of the values in a column have the same data type.</li>
+            <li>Each row is unique.</li>
+            <li>The sequence of columns is insignificant.</li>
+           </ul>
+      </p>
+    </div>
+    
+    <button class="accordion">Types of database languages </button>
+    <div class="panel">
+      <p> <ul><li>Data Definition Language: DDL stands for Data Definition Language. It is used to define database structure or pattern.</li>
+        <li>Data Manipulation Language: DML stands for Data Manipulation Language. It is used for accessing and manipulating data in a database. It handles user requests.</li>
+        <li>Data Control Language: DCL stands for Data Control Language. It is used to retrieve the stored or saved data..</li>
+        <li>Transaction Control Language: TCL is used to run the changes made by the DML statement. TCL can be grouped into a logical transaction.</li>
+       </ul></p>
+    </div>
+    
+    <button class="accordion">ACID properties</button>
+    <div class="panel">
+      <p>To ensure the consistency of the database, certain properties are followed by all the
+        transactions occurring in the system.
+        These properties are called ACID Properties of a transaction.
+        <ul><li>Atomicity</li>
+            <li>Consistency</li>
+            <li>Isolation</li>
+            <li>Durability</li>
+           </ul></p>
+    </div>
+    
+    <button class="accordion">What is normalization ? Types of normalization.</button>
+    <div class="panel">
+      <p>Normalization is the process of organizing data by disintegrating bigger table into smaller one’s
+        with proper dependencies
+        Redundant Data wastes a lot of disk space and creates maintenance problems (Update, Insert and Delete Anomaly). Hence the DB tables should be Normalized.
+        The process of Normalization is achieved by following some rules which are defined as Normal Forms
+        There are basically 3 types of Normal Form – 1NF, 2NF, 3NF. Strictness increases as we go from 1NF to 3NF.
+        Apart from the above mentioned Normal Form there exist one more Form called Boyce Codd Normal Form (BCNF) . This is an advanced version of 3NF and is even stricter than 3NF.</p>
+    </div>
+    
+    <button class="accordion">What is denormalization ? </button>
+    <div class="panel">
+      <p>Denormalization is a database optimization technique in which we add redundant data to one or more tables. This can help us avoid costly joins in a relational database. Note that denormalization does not mean not doing normalisation. It is an optimization technique that is applied after doing normalisation.</p>
+    </div>
+    
+    <button class="accordion">E-R Model ? </button>
+    <div class="panel">
+      <p>ER model stands for an Entity-Relationship model. It is a high-level data model. This model is used to define the data elements and relationship for a specified system.<br><br>
+
+        It develops a conceptual design for the database. It also develops a very simple and easy to design view of data.
+        In ER modelling, the database structure is portrayed as a diagram called an entity-relationship diagram.</p>
+    </div>
+    
+    <button class="accordion"> Conflict Serializability in DBMS .. </button>
+    <div class="panel">
+      <p>Serializability is a concept that helps us to check which schedules are serializable. A serializable schedule is the one that always leaves the database in consistent state.<br><br>
+
+        A schedule is called conflict serializability if after swapping of non-conflicting operations, it can transform into a serial schedule. The schedule will be a conflict serializable if it is conflict equivalent to a serial schedule.</p>
+    </div>
+   
+    </div>
+
+    
+
+    <div id="os" class="tabcontent">
+        <button class="accordion">1) What is the main purpose of an operating system? Discuss different types? </button>
+        <div class="panel">
+          <p>An operating system (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs. So it manages the computer’s memory, processes, devices, files, and security aspects of the system. It also allows us to communicate with the computer without knowing how to speak the computer’s language. Without an operating system, a computer is not useful.
+
+            Types of operating system:
+            
+            <ul><li> Batch OS</li>
+            <li> Distributed OS </li>
+            <li> Multitasking OS</li>
+            <li> Network OS</li>
+            <li> Real-Time OS</li>
+            <li> Mobile OS</li></ul></p>
+        </div>
+        
+        <button class="accordion">2) Define virtual memory.</button>
+        <div class="panel">
+          <p>A computer can address more memory than the amount physically installed on the system. This extra memory is actually called virtual memory and it is a section of a hard disk that’s set up to emulate the computer’s RAM.
+            The main visible advantage of this scheme is that programs can be larger than physical memory. Virtual memory serves two purposes. First, it allows us to extend the use of physical memory by using a disk. Second, it allows us to have memory protection, because each virtual address is translated to a physical address.</p>
+        </div>
+        
+        <button class="accordion">Define thrashing. </button>
+        <div class="panel">
+          <p>Thrashing is a condition or a situation when the system is spending a major portion of its time in servicing the page faults, but the actual processing done is very negligible. High degree of multiprogramming(if number of processes keeps on increasing in the memory), lack of frames (if a process is allocated too few frames, then there will be too many and too frequent page faults) causes Thrashing.</p>
+        </div>
+        
+        <button class="accordion">What is RAID ? Different types. </button>
+        <div class="panel">
+          <p>RAID, or “Redundant Arrays of Independent Disks” is a technique which makes use of a combination of multiple disks instead of using a single disk for increased performance, data redundancy or both.Data redundancy, although taking up extra space, adds to disk reliability. This means, in case of disk failure, if the same data is also backed up onto another disk, we can retrieve the data and go on with the operation.</p>
+        </div>
+        
+        <button class="accordion">What is a deadlock? Different conditions to achieve a deadlock. </button>
+        <div class="panel">
+          <p>A Deadlock is a situation where each of the computer processes waits for a resource which is being assigned to some other process. In this situation, none of the processes gets executed since the resource it needs is held by some other process which is also waiting for some other resource to be released.
+
+            How deadlock is achieved: Deadlock happens when Mutual exclusion, hold and wait, No preemption and circular wait occurs simultaneously.
+            
+            Necessary Conditions for deadlock:
+            
+            1) Mutual Exclusion<br>
+            2) Hold and Wait<br>
+            3) No preemption<br>
+            4) Circular Wait<br></p>
+        </div>
+        
+        <button class="accordion">SRTF Scheduling </button>
+        <div class="panel">
+          <p>SRTF Scheduling is a preemptive version of SJF scheduling. In SRTF, the execution of the process can be stopped after a certain amount of time. At the arrival of every process, the short term scheduler schedules the process with the least remaining burst time among the list of available processes and the running process.</p>
+        </div>
+        
+        <button class="accordion">Priority Scheduling </button>
+        <div class="panel">
+          <p>Priority Scheduling is a method of scheduling processes that is based on priority. In this algorithm, the scheduler selects the tasks to work as per the priority.
+<br>
+            The processes with higher priority should be carried out first, whereas jobs with equal priorities are carried out on a round-robin or FCFS basis. Priority depends upon memory requirements, time requirements, etc.</p>
+        </div>
+        
+        <button class="accordion">Round Robin Scheduling </button>
+        <div class="panel">
+          <p>In Round-robin scheduling, each ready task runs turn by turn only in a cyclic queue for a limited time slice. This algorithm also offers starvation free execution of processes. Widely used preemptive scheduling method in traditional OS. All the jobs get a fair allocation of CPU. Cons include : Finding a correct time quantum is a quite difficult task in this system, Round-robin scheduling doesn’t give special priority to more important tasks.</p>
+        </div>
+        
+        <button class="accordion">Banker’s Algorithm </button>
+        <div class="panel">
+          <p>It is a banker algorithm used to avoid deadlock and allocate resources safely to each process in the computer system. The ‘S-State’ examines all possible tests or activities before deciding whether the allocation should be allowed to each process. It also helps the operating system to successfully share the resources between all the processes. The banker’s algorithm is named because it checks whether a person should be sanctioned a loan amount or not to help the bank system safely simulate allocation resources.</p>
+        </div>
+        
+        <button class="accordion">Explain Cache</button>
+        <div class="panel">
+          <p>Cache memory is an extremely fast memory type that acts as a buffer between RAM and the CPU. It holds frequently requested data and instructions so that they are immediately available to the CPU when needed.</p>
+        </div>
+        
+        </div>
+
+        
+
+
+
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
+{% endblock %}

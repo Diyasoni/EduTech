@@ -1,0 +1,57 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <img  src="{% static 'images/gfg.png' %}" alt="Notes image">
+              </div>
+              <div class="col-md-9">
+                <h1><a href="https://practice.geeksforgeeks.org/courses/dsa-self-paced">DSA Self Paced</a></h1>
+                <p>DSA self paced is one of the best & affordable courses out there to master Data Structures & Algorithms. Let’s take it step by step:
+<br>
+                    Why do you need to learn Data Structures & Algorithms?<br>
+                    <ul>
+                    <li> It improves your problem solving skills dramatically.</li>
+                    <li> Key differentiator between a good/bad software engineer.</li>
+                   <li> Is the most important topic in the interview rounds of FAANG or any other good tech company like OLA, UBER, Flipkart etc.</li></ul>
+                    <br><br> GfG’s DSA Self Paced?
+                    
+                   <ul><li> Taught by none other than Mr. Sandeep Jain with 10+ years in teaching DSA.</li>
+                    <li> Live Doubt Support whenever you are stuck.</li>
+                    <li> Covers everything from scratch to details.</li>
+                    <li> Own ide/code practice platform.</li>
+                    <li> Learn by Doing, solve more than 400+ coding questions.</li>
+                    <li> More than 70,000+ students enrolled.</li>
+                    <li> Most affordable/best course.</li></ul></p>
+              </div>
+            </div><br><br>
+            <div class="row">
+                    <p>
+                        <h1><a href="https://practice.geeksforgeeks.org/courses/complete-interview-preparation">Complete Interview Preparation Course</a></h1>
+One of the best courses if you want to do all round interview preparation:
+<br>
+What does it includes?<br>
+<ul>
+<li> Programming Languages.</li>
+<li> Concepts of Object Oriented Programming.</li>
+<li> Complete data structures and algorithms from basic to advanced.</li>
+<li> Object Oriented design or low level design asked in companies like Amazon, Microsoft etc.</li>
+<li> Projects</li>
+<li> Resume Building and much more.</li>
+<li> Course Instructor: Sandeep Jain</li>
+                    </p>
+                
+              </div>
+        
+          </div>
+    </body>
+</html>
+{% endblock %}
